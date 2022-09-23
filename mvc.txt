@@ -1,0 +1,58 @@
+mvc adalah pola arsitektur pada perancangan perangkat lunak berorientasi objek atau oop
+tujuan utama mvc adalah memisahkan tampilan, data, dan proses
+mvc = model, view, controller/data, tampilan, proses
+
+kenapa mvc 
+1. struktur kode yang baik 
+2. pemisahan logic dan tampilan
+3. perawatan kode
+4. implementasi oop 
+5. digunakan oleh banyak web application framework
+
+
+Pengertian MVC
+
+Model View Controller atau yang dapat disingkat MVC adalah sebuah pola arsitektur dalam membuat sebuah aplikasi dengan cara memisahkan kode menjadi tiga bagian yang terdiri dari:
+
+    Model
+    Bagian yang bertugas untuk menyiapkan, mengatur, memanipulasi, dan mengorganisasikan data yang ada di database.
+
+    View
+    Bagian yang bertugas untuk menampilkan informasi dalam bentuk Graphical User Interface (GUI).
+
+    Controller
+    Bagian yang bertugas untuk menghubungkan serta mengatur model dan view agar dapat saling terhubung.
+
+
+htacces 
+
+
+
+<!--  -->
+Options -Multiviews
+
+<!-- RewriteEngine dibawah berfungsi menulis ulang url di browser-->
+RewriteEngine On
+<!-- konfigurasi Rewrite -->
+<!-- RewriteCond : Rewrite Kondeis -->
+<!-- dengan menirim parameternya !d, kalo parameternya dikirim adalah folder maka akan diabaikan  -->
+<!-- !d : folder -->
+RewriteCond %{REQUEST_FILENAME} !d
+
+<!-- dengan menirim parameternya !f, kalo parameternya dikirim adalah folder maka akan diabaikan  -->
+<!-- !d : file -->
+RewriteCond %{REQUEST_FILENAME} !f
+
+<!-- RewriteRule berfungsi menulis ulang aturannya -->
+<!-- expresi regular/regular expression atau regex -->
+RewriteRule ^(.*)$ index.php?url=$1[L]
+
+<!-- ^ : carret. fungsi untuk membaca apapun yang ditulis diURL mulai dari awal-->
+<!-- . : ambil apapun -->
+<!-- * : ambil karaterknya satu persatu / semua -->
+<!-- $ : selesai kecuali enter -->
+<!-- index.php : arahkan ke file index yang mengirimkan url-->
+<!--  ?url=$1 (placeholder) : isi dari url-->
+<!-- ^(.*)$ index.php?url=$1 :  apapun yang ditulis ^(.*)$ akan disimpan kesini ?url=$1-->
+<!-- [L] : aturan-->
+<!-- ^(.*)$ index.php?url=$1[L]  : [L] apapun rule yang sudah terpenuhi jangan jalankan rule setelah ini-->
