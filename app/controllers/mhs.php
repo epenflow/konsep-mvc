@@ -60,4 +60,13 @@ class mhs extends Controller
             exit;
         }
     }
+
+    public function cari()
+    {
+        $data['judul']  = 'daftar mahasiswa';
+        $data['mhs'] = $this->models('mhs_models')->cariData();
+        $this->view('template/header', $data);
+        $this->view('mhs/index', $data);
+        $this->view('template/footer');
+    }
 }

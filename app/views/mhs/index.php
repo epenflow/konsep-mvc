@@ -7,13 +7,33 @@
     </div>
 
 
+    <div class="row mb-4">
+        <div class="col-lg-6">
+            <button type="button" class="btn btn-primary tambahData" data-toggle="modal" data-target="#exampleModal">
+                tambahkan data mahasiswa
+            </button>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-lg-6">
+            <form action="<?= BASEURL; ?>/mhs/cari" method="post">
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="cari mahasiswa" aria-label="Recipient's username" aria-describedby="basic-addon2" name="keyword" id="keyword" autocomplete="off">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="submit">Button</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-6">
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary tambahData" data-toggle="modal" data-target="#exampleModal">
-                tambahkan data mahasiswa
-            </button>
+
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

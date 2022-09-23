@@ -55,4 +55,14 @@ class mhs_models
 
         return $this->db->rowCount();
     }
+
+    public function cariData()
+    {
+        $keyword = $_POST['keyword'];
+        $q = 'SELECT * FROM mhs WHERE nama_mhs LIKE :keyword';
+        $this->db->query($q);
+        $this->db->bind('keyword', "%$keyword%");
+
+        return $this->db->resultSet();
+    }
 }
